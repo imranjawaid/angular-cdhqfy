@@ -1,0 +1,24 @@
+<form [formGroup]="roomForm" (ngSubmit)="onSubmit()">
+  <!-- <h3> {{ roomForm.get('buildingName').value }} Rooms </h3>
+  <div class="rooms" formArrayName="rooms">
+    <div class="room" style="padding: 2rem; border:1px solid gray; margin-bottom:1rem;"
+      *ngFor="let room of roomForm.get('rooms').controls" 
+      [formGroup] = "room">
+     Room Number: <input type="text" formControlName="roomNo"> 
+     <div class="beds">
+       <div class="bed" *ngFor="let bed of bedsArray">
+         <input [value]="bed.bed" name="bedsCount" formControlName="bedsCount" type="radio"> 
+       </div>
+     </div>
+    </div>
+  </div>
+   {{roomForm.value | json}}
+  <button type="submit"> Submit</button> -->
+
+   <div *ngFor='let item of bedsArray;let i = index'>                    
+       <input type="radio" [checked]="item.selected" (change)='radioChecked(item.id,i)' > 
+        <input type="text" value='{{item.name}}'/>  
+        <button type="button">save</button>                    
+     </div> 
+</form>
+
